@@ -27,3 +27,12 @@ export const SGOV_COLOR: TickerColor = {
 export function getTickerColor(index: number): TickerColor {
   return PALETTE[index % PALETTE.length];
 }
+
+export const INVESTMENT_COLOR = '#e84b5f';
+export const PORTFOLIO_LINE_COLOR = '#20a76c';
+
+const BENCHMARK_LINE_PALETTE = ['#e84b5f', '#3779df', '#8a63de', '#f2ad3d', '#20a76c'];
+
+export function getBenchmarkColor(index: number): string {
+  return BENCHMARK_LINE_PALETTE[index % BENCHMARK_LINE_PALETTE.length];
+}
