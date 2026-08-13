@@ -1,0 +1,184 @@
+.allocation {
+  padding: 25px;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.cardTitleRow > *:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.subcopy {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.dateLabel {
+  display: block;
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.allocationBody {
+  display: grid;
+  grid-template-columns: 164px 1fr;
+  align-items: center;
+  gap: 18px;
+  margin-top: 23px;
+}
+
+.pieWrap {
+  position: relative;
+  width: 158px;
+  height: 158px;
+  filter: drop-shadow(0 9px 20px rgba(53, 64, 100, 0.1));
+}
+
+.pieCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.pieCenter strong {
+  display: block;
+  font-size: 20px;
+  letter-spacing: -0.06em;
+}
+
+.pieCenter span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.legendName {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #515871;
+}
+
+.legendName b {
+  color: #363d57;
+  font-weight: 750;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tickerTag {
+  flex: 0 0 auto;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--dot);
+}
+
+.legend li > b {
+  color: #3c435c;
+  font-variant-numeric: tabular-nums;
+}
+
+.cashSummary {
+  margin-top: 19px;
+  padding: 10px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 10px;
+  border-radius: 10px;
+  background: #f4f8f6;
+  color: #49705e;
+  font-size: 12px;
+}
+
+.cashSummary b {
+  font-size: 13px;
+}
+
+@media (max-width: 680px) {
+  .allocation {
+    padding: 19px;
+  }
+
+  .cardTitleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .allocationBody {
+    grid-template-columns: 130px 1fr;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .pieWrap {
+    width: 124px;
+    height: 124px;
+  }
+
+  .pieCenter strong {
+    font-size: 17px;
+  }
+
+  .legend {
+    gap: 8px;
+  }
+
+  .legend li {
+    font-size: 11px;
+  }
+
+  .cashSummary {
+    margin-top: 15px;
+  }
+}

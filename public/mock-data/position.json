@@ -1,0 +1,53 @@
+{
+  "updateDate": "2026-08-12 05:01",
+  "portfolio": {
+    "totalValue": 42838.92,
+    "positionsCostBasis": 32093.00,
+    "positionsMarketValue": 33218.61,
+    "cashBalance": 6734.22,
+    "sgovBalance": 2886.09,
+    "profitAmountExcludingFees": 1125.61
+  },
+  "stocks": [
+    {
+      "ticker": "VOO",
+      "name": "Vanguard S&P 500",
+      "quantity": 20,
+      "costBasis": 14129.00,
+      "marketValueExcludingFees": 14842.60,
+      "avgPurchasePrice": 706.45,
+      "profitAmountExcludingFees": 713.60,
+      "profitRateExcludingFees": 5.05
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "quantity": 25,
+      "costBasis": 9352.50,
+      "marketValueExcludingFees": 9140.75,
+      "avgPurchasePrice": 374.10,
+      "profitAmountExcludingFees": -211.75,
+      "profitRateExcludingFees": -2.26
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft",
+      "quantity": 15,
+      "costBasis": 6322.50,
+      "marketValueExcludingFees": 6804.00,
+      "avgPurchasePrice": 421.50,
+      "profitAmountExcludingFees": 481.50,
+      "profitRateExcludingFees": 7.61
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "quantity": 30,
+      "costBasis": 2289.00,
+      "marketValueExcludingFees": 2431.26,
+      "avgPurchasePrice": 76.30,
+      "profitAmountExcludingFees": 142.26,
+      "profitRateExcludingFees": 6.21
+    }
+  ]
+}

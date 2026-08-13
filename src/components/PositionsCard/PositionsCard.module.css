@@ -1,0 +1,175 @@
+.positions {
+  padding: 25px 25px 12px;
+  overflow: hidden;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.cardTitleRow > *:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.subcopy {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.portfolioTotal {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.portfolioTotal span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.portfolioTotal strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+.positionList {
+  margin-top: 17px;
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.positionList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.positionList::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+
+.positionRow {
+  display: grid;
+  grid-template-columns: minmax(125px, 1.1fr) 0.65fr 1fr 0.9fr;
+  align-items: center;
+  gap: 18px;
+  min-height: 62px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.positionRow:first-child {
+  border-top: 0;
+}
+
+.asset {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.tickerBadge {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: var(--badge-bg);
+  color: var(--badge-color);
+  font-weight: 850;
+  font-size: 10px;
+}
+
+.assetName {
+  min-width: 0;
+}
+
+.assetName b {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.cellLabel {
+  display: none;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.metric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric strong {
+  font-size: 13px;
+}
+
+.metric small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.gain {
+  color: var(--red) !important;
+}
+
+.loss {
+  color: var(--blue) !important;
+}
+
+@media (max-width: 680px) {
+  .positions {
+    padding: 19px;
+  }
+
+  .positionRow {
+    grid-template-columns: minmax(116px, 1fr) 1fr;
+    gap: 10px 16px;
+    padding: 12px 0;
+    min-height: 0;
+  }
+
+  .asset {
+    grid-row: span 2;
+  }
+
+  .cellLabel {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .metric {
+    text-align: left;
+  }
+
+  .metric strong {
+    font-size: 12px;
+  }
+
+  .cardTitleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .portfolioTotal {
+    text-align: left;
+  }
+
+  .portfolioTotal strong {
+    font-size: 17px;
+  }
+}
