@@ -1,0 +1,49 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 34px 42px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid rgba(228, 231, 240, 0.82);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 680px) {
+  .shell {
+    padding: 18px 14px 26px;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+}

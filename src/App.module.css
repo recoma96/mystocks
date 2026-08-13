@@ -1,0 +1,23 @@
+.overview {
+  display: grid;
+  grid-template-columns: minmax(430px, 0.93fr) minmax(0, 1.55fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.stateCard {
+  padding: 40px 25px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.errorCard {
+  color: var(--red);
+}
+
+@media (max-width: 980px) {
+  .overview {
+    grid-template-columns: 1fr;
+  }
+}
