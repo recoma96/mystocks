@@ -13,3 +13,13 @@ export function getPositionPath(date: Date = getLatestDataDate()): string {
   }
   return `/positions/${format(date, 'yyyy-MM-dd')}.json`;
 }
+
+/**
+ * 보유 총 금액/수익률 비교 추이 데이터도 position과 동일하게 매일 한 번(오전 5시) 갱신된다.
+ */
+export function getProfitHistoryPath(date: Date = getLatestDataDate()): string {
+  if (IS_MOCK_DATA_SOURCE) {
+    return '/profit-history.json';
+  }
+  return `/histories/${format(date, 'yyyy-MM-dd')}.json`;
+}
