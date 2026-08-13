@@ -1,4 +1,5 @@
 import styles from './App.module.css';
+import { ActivityCard } from './components/ActivityCard/ActivityCard';
 import { AllocationCard } from './components/AllocationCard/AllocationCard';
 import { ChartCard } from './components/ChartCard/ChartCard';
 import { Header } from './components/Header/Header';
@@ -48,6 +49,8 @@ function App() {
       )}
 
       {profitHistory && <ChartCard data={profitHistory} />}
+
+      <ActivityCard />
     </main>
   );
 }

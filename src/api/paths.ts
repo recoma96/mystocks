@@ -23,3 +23,12 @@ export function getProfitHistoryPath(date: Date = getLatestDataDate()): string {
   }
   return `/histories/${format(date, 'yyyy-MM-dd')}.json`;
 }
+
+/**
+ * 매수/매도 내역은 년-월 단위 파일로 나뉜다 (예: 2026년 8월 -> /transactions/2026-08.json).
+ * 목업 모드에서도 월 이동 캐싱을 확인할 수 있도록 동일하게 월별 파일을 둔다.
+ */
+export function getTransactionHistoryPath(year: number, month: number): string {
+  const yearMonth = `${year}-${String(month).padStart(2, '0')}`;
+  return `/transactions/${yearMonth}.json`;
+}

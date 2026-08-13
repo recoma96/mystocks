@@ -1,0 +1,277 @@
+.activity {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  margin-top: 22px;
+  overflow: hidden;
+}
+
+.calendarPane {
+  padding: 25px;
+  border-right: 1px solid var(--line);
+}
+
+.tradePane {
+  padding: 25px;
+}
+
+.subcopy {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.monthNav h2 {
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.iconButton {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: #667087;
+  cursor: pointer;
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid #536ed1;
+  outline-offset: 2px;
+}
+
+.week,
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.week {
+  margin-bottom: 6px;
+}
+
+.week span {
+  text-align: center;
+  color: #99a0b3;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.dates {
+  grid-auto-rows: 66px;
+}
+
+.date {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  text-align: left;
+  color: #555d76;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.date:hover {
+  background: #f5f6fa;
+}
+
+.date:focus-visible {
+  outline: 2px solid #536ed1;
+  outline-offset: 2px;
+}
+
+.blank {
+  cursor: default;
+}
+
+.blank:hover {
+  background: transparent;
+}
+
+.dateNumber {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.today .dateNumber {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+}
+
+.selected {
+  background: #f7f7fb;
+  border-color: #d6daeb;
+  box-shadow: 0 3px 8px rgba(45, 51, 83, 0.07);
+}
+
+.tradeCounts {
+  margin-top: 4px;
+  display: grid;
+  gap: 2px;
+}
+
+.tradeCount {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.buy {
+  color: var(--red);
+}
+
+.sell {
+  color: var(--blue);
+}
+
+.emptyDay {
+  color: #9aa1b4;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+.tradeDate {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.tradeList {
+  list-style: none;
+  margin: 17px 0 0;
+  padding: 0;
+}
+
+.tradeItem {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.tradeItem:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.tradeItem b {
+  font-size: 13px;
+}
+
+.tradeItem p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tradeRight {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tradeRight span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.tradeRight strong {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.tradeRight small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.gain {
+  color: var(--red) !important;
+}
+
+.loss {
+  color: var(--blue) !important;
+}
+
+.bottomNote {
+  margin-top: 16px;
+  color: #9096a8;
+  font-size: 11px;
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  .activity {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+  }
+
+  .calendarPane {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .calendarPane,
+  .tradePane {
+    padding: 19px;
+  }
+
+  .dates {
+    grid-auto-rows: 54px;
+    gap: 2px;
+  }
+
+  .date {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .tradeCounts {
+    margin-top: 2px;
+  }
+
+  .tradeCount {
+    font-size: 8px;
+  }
+
+  .bottomNote {
+    text-align: center;
+  }
+}
