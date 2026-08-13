@@ -1,0 +1,86 @@
+{
+  "date": "2026-08",
+  "histories": [
+    {
+      "type": "buy",
+      "ticker": "QQQ",
+      "quantity": 4,
+      "amount": 1510.20,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-04 10:15:22"
+    },
+    {
+      "type": "buy",
+      "ticker": "MSFT",
+      "quantity": 2,
+      "amount": 842.10,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-06 09:47:03"
+    },
+    {
+      "type": "buy",
+      "ticker": "VOO",
+      "quantity": 1,
+      "amount": 741.13,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-06 14:22:51"
+    },
+    {
+      "type": "buy",
+      "ticker": "NVDA",
+      "quantity": 20,
+      "amount": 1628.00,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-10 11:05:37"
+    },
+    {
+      "type": "sell",
+      "ticker": "AAPL",
+      "quantity": 16,
+      "amount": 3284.60,
+      "profitRate": 14.60,
+      "profitAmount": 418.60,
+      "filledAt": "2026-08-11 10:02:14"
+    },
+    {
+      "type": "sell",
+      "ticker": "TSLA",
+      "quantity": 5,
+      "amount": 1971.20,
+      "profitRate": -5.69,
+      "profitAmount": -118.80,
+      "filledAt": "2026-08-11 15:38:09"
+    },
+    {
+      "type": "buy",
+      "ticker": "SGOV",
+      "quantity": 20,
+      "amount": 2002.31,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-14 09:31:45"
+    },
+    {
+      "type": "sell",
+      "ticker": "QQQ",
+      "quantity": 3,
+      "amount": 1140.75,
+      "profitRate": 5.19,
+      "profitAmount": 56.30,
+      "filledAt": "2026-08-18 09:40:12"
+    },
+    {
+      "type": "buy",
+      "ticker": "VOO",
+      "quantity": 2,
+      "amount": 1490.00,
+      "profitRate": null,
+      "profitAmount": null,
+      "filledAt": "2026-08-18 14:05:47"
+    }
+  ]
+}
