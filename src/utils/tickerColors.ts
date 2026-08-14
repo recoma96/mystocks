@@ -24,6 +24,13 @@ export const SGOV_COLOR: TickerColor = {
   badgeColor: '#1c8a5b',
 };
 
+/** 대기자금(현금) 계열과 같은 톤이되 조금 더 진한 회색 — 종목 비중 카드에서 SGOV를 현금과 같은 그룹으로 표현할 때 사용 */
+export const SGOV_RESERVE_COLOR: TickerColor = {
+  dot: '#6b7186',
+  badgeBg: '#eceef2',
+  badgeColor: '#3f4557',
+};
+
 export function getTickerColor(index: number): TickerColor {
   return PALETTE[index % PALETTE.length];
 }
