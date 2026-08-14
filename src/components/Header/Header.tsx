@@ -14,7 +14,7 @@ export function Header({ updateDate }: HeaderProps) {
         </div>
         <div>
           <strong className={styles.brandName}>My Stocks</strong>
-          <small className={styles.brandSub}>하정현님의 포트폴리오</small>
+          <small className={styles.brandSub}>recoma님의 포트폴리오</small>
         </div>
       </div>
       <div className={styles.topActions}>
