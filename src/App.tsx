@@ -56,6 +56,15 @@ function App() {
       {profitHistory && <ChartCard data={profitHistory} />}
 
       <ActivityCard />
+
+      <p className={styles.disclaimer}>
+        이 페이지의 데이터는{' '}
+        <a href="https://corp.tossinvest.com/ko/open-api" target="_blank" rel="noopener noreferrer">
+          토스증권 OpenAPI
+        </a>
+        를 통해 제공받았으며, 투자를 권유하거나 조언하기 위한 목적이 아닙니다. 투자 판단과 그에 따른 책임은
+        본인에게 있습니다.
+      </p>
     </main>
   );
 }
