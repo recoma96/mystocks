@@ -81,6 +81,13 @@
       "profitRate": null,
       "profitAmount": null,
       "filledAt": "2026-08-18 14:05:47"
+    },
+    {
+      "type": "sell",
+      "ticker": "MSFT",
+      "quantity": 1,
+      "amount": 430.50,
+      "filledAt": "2026-08-20 13:15:00"
     }
   ]
 }

@@ -130,7 +130,8 @@ export function ActivityCard() {
         {!isLoading && !isError && selectedTrades.length > 0 && (
           <ul className={styles.tradeList}>
             {selectedTrades.map((trade, index) => {
-              const isGain = (trade.profitAmount ?? 0) >= 0;
+              const { profitRate, profitAmount } = trade;
+              const isGain = (profitAmount ?? 0) >= 0;
               return (
                 <li className={styles.tradeItem} key={`${trade.ticker}-${trade.filledAt}-${index}`}>
                   <div>
@@ -139,15 +140,11 @@ export function ActivityCard() {
                     </b>
                     <p>{trade.quantity}주</p>
                   </div>
-                  {trade.type === 'sell' && trade.profitRate !== null && trade.profitAmount !== null && (
+                  {trade.type === 'sell' && typeof profitRate === 'number' && typeof profitAmount === 'number' && (
                     <div className={styles.tradeRight}>
                       <span>매도</span>
-                      <strong className={isGain ? styles.gain : styles.loss}>
-                        {formatPercent(trade.profitRate)}
-                      </strong>
-                      <small className={isGain ? styles.gain : styles.loss}>
-                        {formatSignedUSD(trade.profitAmount)}
-                      </small>
+                      <strong className={isGain ? styles.gain : styles.loss}>{formatPercent(profitRate)}</strong>
+                      <small className={isGain ? styles.gain : styles.loss}>{formatSignedUSD(profitAmount)}</small>
                     </div>
                   )}
                 </li>

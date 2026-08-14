@@ -9,10 +9,10 @@ export interface TransactionEntry {
   quantity: number;
   /** 판매/구매금액 */
   amount: number;
-  /** 수수료를 제외한 수익비율, buy시 null */
-  profitRate: number | null;
-  /** 수수료를 제외한 수익금, buy시 null */
-  profitAmount: number | null;
+  /** 수수료를 제외한 수익비율, buy시 null. sell이어도 필드 자체가 없을 수 있음 */
+  profitRate?: number | null;
+  /** 수수료를 제외한 수익금, buy시 null. sell이어도 필드 자체가 없을 수 있음 */
+  profitAmount?: number | null;
   /** 최종 체결 시각 "YYYY-MM-DD HH:mm:ss" */
   filledAt: string;
 }
