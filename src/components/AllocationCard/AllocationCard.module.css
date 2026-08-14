@@ -100,6 +100,20 @@
   white-space: nowrap;
 }
 
+.nameLink {
+  color: #363d57;
+  font-weight: 750;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nameLink:hover,
+.nameLink:focus-visible {
+  text-decoration: underline;
+}
+
 .tickerTag {
   flex: 0 0 auto;
   margin-left: 6px;

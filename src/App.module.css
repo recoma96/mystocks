@@ -21,3 +21,39 @@
     grid-template-columns: 1fr;
   }
 }
+
+.disclaimer {
+  margin-top: 22px;
+  padding: 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.disclaimer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.disclaimer a:hover,
+.disclaimer a:focus-visible {
+  color: var(--ink);
+}
+
+.credit {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.credit a:hover,
+.credit a:focus-visible {
+  color: var(--ink);
+}
