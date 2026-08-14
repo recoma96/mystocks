@@ -1,9 +1,19 @@
+export class HttpError extends Error {
+  status: number;
+
+  constructor(status: number, message: string) {
+    super(message);
+    this.name = 'HttpError';
+    this.status = status;
+  }
+}
+
 const DATA_BASE_URL = import.meta.env.VITE_DATA_BASE_URL ?? '/mock-data';
 
 export async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(`${DATA_BASE_URL}${path}`);
   if (!res.ok) {
-    throw new Error(`Failed to fetch ${path}: ${res.status} ${res.statusText}`);
+    throw new HttpError(res.status, `Failed to fetch ${path}: ${res.status} ${res.statusText}`);
   }
   return res.json() as Promise<T>;
 }
