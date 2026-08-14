@@ -1,7 +1,7 @@
 import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 import type { PositionData } from '../../types/position';
 import { formatCompactUSD, formatDateDots, formatUSD } from '../../utils/format';
-import { CASH_COLOR, getTickerColor } from '../../utils/tickerColors';
+import { CASH_COLOR, getTickerColor, SGOV_RESERVE_COLOR } from '../../utils/tickerColors';
 import styles from './AllocationCard.module.css';
 
 interface AllocationCardProps {
@@ -11,22 +11,35 @@ interface AllocationCardProps {
 export function AllocationCard({ data }: AllocationCardProps) {
   const { portfolio, stocks, updateDate } = data;
 
-  const slices = [
-    ...stocks.map((stock, index) => ({
+  const investmentSlices = stocks
+    .filter((stock) => stock.ticker !== 'SGOV')
+    .map((stock, index) => ({
       key: stock.ticker,
       name: stock.name,
       ticker: stock.ticker as string | undefined,
       value: stock.marketValueExcludingFees,
       color: getTickerColor(index),
-    })),
-    {
-      key: 'CASH',
-      name: '보유 현금',
-      ticker: undefined as string | undefined,
-      value: portfolio.cashBalance,
-      color: CASH_COLOR,
-    },
-  ];
+    }))
+    .sort((a, b) => b.value - a.value);
+
+  const sgovStock = stocks.find((stock) => stock.ticker === 'SGOV');
+  const cashSlice = {
+    key: 'CASH',
+    name: '보유 현금',
+    ticker: undefined as string | undefined,
+    value: portfolio.cashBalance,
+    color: CASH_COLOR,
+  };
+  const sgovSlice = sgovStock && {
+    key: sgovStock.ticker,
+    name: sgovStock.name,
+    ticker: sgovStock.ticker as string | undefined,
+    value: sgovStock.marketValueExcludingFees,
+    color: SGOV_RESERVE_COLOR,
+  };
+
+  // 투자 종목은 비중이 큰 순서대로, 대기자금(현금+SGOV)은 정렬과 무관하게 맨 뒤로 보내 도넛 왼쪽에 모아둔다.
+  const slices = [...investmentSlices, cashSlice, ...(sgovSlice ? [sgovSlice] : [])];
 
   const reserveBalance = portfolio.cashBalance + portfolio.sgovBalance;
   const reservePercent = (reserveBalance / portfolio.totalValue) * 100;
