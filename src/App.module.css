@@ -40,3 +40,20 @@
 .disclaimer a:focus-visible {
   color: var(--ink);
 }
+
+.credit {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.credit a:hover,
+.credit a:focus-visible {
+  color: var(--ink);
+}
