@@ -77,7 +77,7 @@ function buildReturnSeries(data: ProfitHistoryData) {
     map: new Map(bm.histories.map((h) => [h.date, h.profitRate])),
   }));
 
-  return data.myPortfolio.histories.map((h) => {
+  return data.histories.map((h) => {
     const point: Record<string, number | string> = {
       date: h.date,
       portfolio: h.profitRateExcludingFees,
@@ -94,7 +94,8 @@ function buildReturnSeries(data: ProfitHistoryData) {
 
 export function ChartCard({ data }: ChartCardProps) {
   const [tab, setTab] = useState<Tab>('asset');
-  const { current, histories } = data.myPortfolio;
+  const { current } = data.myPortfolio;
+  const { histories } = data;
   const isGain = current.profitAmountExcludingFees >= 0;
   const dayCount = histories.length;
   const returnSeries = useMemo(() => buildReturnSeries(data), [data]);
