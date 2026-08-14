@@ -2,6 +2,7 @@ import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 import type { PositionData } from '../../types/position';
 import { formatCompactUSD, formatDateDots, formatUSD } from '../../utils/format';
 import { CASH_COLOR, getTickerColor, SGOV_RESERVE_COLOR } from '../../utils/tickerColors';
+import { getStockLink } from '../../utils/links';
 import styles from './AllocationCard.module.css';
 
 interface AllocationCardProps {
@@ -93,7 +94,18 @@ export function AllocationCard({ data }: AllocationCardProps) {
                   className={styles.dot}
                   style={{ '--dot': slice.color.dot } as React.CSSProperties}
                 />
-                <b>{slice.name}</b>
+                {slice.ticker ? (
+                  <a
+                    className={styles.nameLink}
+                    href={getStockLink(slice.ticker)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {slice.name}
+                  </a>
+                ) : (
+                  <b>{slice.name}</b>
+                )}
                 {slice.ticker && (
                   <span
                     className={styles.tickerTag}

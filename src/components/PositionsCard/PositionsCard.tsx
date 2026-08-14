@@ -1,6 +1,7 @@
 import type { PositionData } from '../../types/position';
 import { formatPercent, formatSignedUSD, formatUSD } from '../../utils/format';
 import { getTickerColor } from '../../utils/tickerColors';
+import { getStockLink } from '../../utils/links';
 import styles from './PositionsCard.module.css';
 
 interface PositionsCardProps {
@@ -43,7 +44,14 @@ export function PositionsCard({ data }: PositionsCardProps) {
                   {stock.ticker}
                 </span>
                 <span className={styles.assetName}>
-                  <b>{stock.name}</b>
+                  <a
+                    className={styles.nameLink}
+                    href={getStockLink(stock.ticker)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {stock.name}
+                  </a>
                 </span>
               </div>
               <div className={styles.metric}>
