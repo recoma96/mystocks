@@ -2,11 +2,11 @@
   "updateDate": "2026-08-12 05:01",
   "portfolio": {
     "totalValue": 42838.92,
-    "positionsCostBasis": 32093.00,
-    "positionsMarketValue": 33218.61,
+    "positionsCostBasis": 34980.00,
+    "positionsMarketValue": 36104.70,
     "cashBalance": 6734.22,
     "sgovBalance": 2886.09,
-    "profitAmountExcludingFees": 1125.61
+    "profitAmountExcludingFees": 1124.70
   },
   "stocks": [
     {
@@ -48,6 +48,16 @@
       "avgPurchasePrice": 76.30,
       "profitAmountExcludingFees": 142.26,
       "profitRateExcludingFees": 6.21
+    },
+    {
+      "ticker": "SGOV",
+      "name": "iShares 0-3 Month Treasury Bond ETF",
+      "quantity": 28.72,
+      "costBasis": 2887.00,
+      "marketValueExcludingFees": 2886.09,
+      "avgPurchasePrice": 100.52,
+      "profitAmountExcludingFees": -0.91,
+      "profitRateExcludingFees": -0.03
     }
   ]
 }

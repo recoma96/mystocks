@@ -1,7 +1,7 @@
 import { Pie, PieChart, ResponsiveContainer } from 'recharts';
 import type { PositionData } from '../../types/position';
 import { formatCompactUSD, formatDateDots, formatUSD } from '../../utils/format';
-import { CASH_COLOR, getTickerColor, SGOV_COLOR } from '../../utils/tickerColors';
+import { CASH_COLOR, getTickerColor } from '../../utils/tickerColors';
 import styles from './AllocationCard.module.css';
 
 interface AllocationCardProps {
@@ -25,13 +25,6 @@ export function AllocationCard({ data }: AllocationCardProps) {
       ticker: undefined as string | undefined,
       value: portfolio.cashBalance,
       color: CASH_COLOR,
-    },
-    {
-      key: 'SGOV',
-      name: 'iShares 0-3M Treasury',
-      ticker: 'SGOV' as string | undefined,
-      value: portfolio.sgovBalance,
-      color: SGOV_COLOR,
     },
   ];
 

@@ -9,6 +9,8 @@ interface PositionsCardProps {
 
 export function PositionsCard({ data }: PositionsCardProps) {
   const { portfolio, stocks } = data;
+  // SGOV는 대기자금으로 취급되어 종목 비중 카드에서 다루므로 보유 종목 목록에서는 제외한다.
+  const displayStocks = stocks.filter((stock) => stock.ticker !== 'SGOV');
 
   return (
     <article className={`card ${styles.positions}`}>
@@ -23,7 +25,7 @@ export function PositionsCard({ data }: PositionsCardProps) {
         </div>
       </div>
       <div className={styles.positionList}>
-        {stocks.map((stock, index) => {
+        {displayStocks.map((stock, index) => {
           const color = getTickerColor(index);
           const isGain = stock.profitAmountExcludingFees >= 0;
           return (

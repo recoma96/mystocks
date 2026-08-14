@@ -23,6 +23,8 @@ export interface PortfolioHistoryEntry {
 export interface BenchmarkHistoryEntry {
   /** 날짜 (YYYY-MM-DD) */
   date: string;
+  /** 종가 */
+  price: number;
   /** 이익률 */
   profitRate: number;
 }
@@ -38,8 +40,8 @@ export interface Benchmark {
 export interface ProfitHistoryData {
   myPortfolio: {
     current: PortfolioCurrentStats;
-    histories: PortfolioHistoryEntry[];
   };
+  histories: PortfolioHistoryEntry[];
   /** 비교군 */
   benchMarks: Benchmark[];
 }
