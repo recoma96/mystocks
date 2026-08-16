@@ -27,7 +27,7 @@ export async function fetchJsonWithDateFallback<T>(
       const data = await fetchJson<T>(pathBuilder(date));
       return { data, date };
     } catch (error) {
-      const isNotFound = error instanceof HttpError && error.status === 404;
+      const isNotFound = error instanceof HttpError && (error.status === 404 || error.status === 403);
       if (!isNotFound) {
         throw error;
       }
