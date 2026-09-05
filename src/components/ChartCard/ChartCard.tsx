@@ -177,7 +177,7 @@ export function ChartCard({ data }: ChartCardProps) {
       ) : (
         <>
           <div className={styles.chartInfo}>
-            <strong className={styles.gain}>{formatPercent(current.profitRateExcludingFees)}</strong>
+            <strong className={isGain ? styles.gain : styles.loss}>{formatPercent(current.profitRateExcludingFees)}</strong>
             <span>총 보유금액 기준 수익률</span>
             <em>최근 {dayCount} 영업일</em>
           </div>
