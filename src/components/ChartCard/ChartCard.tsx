@@ -27,6 +27,25 @@ function formatTick(date: string) {
   return format(parseISO(date), 'M/d');
 }
 
+const DENSE_DAY_THRESHOLD = 30;
+const DENSE_TICK_COUNT = 10;
+
+/**
+ * 영업일이 많으면 날짜 라벨이 다닥다닥 붙으므로, 첫 날짜와 마지막 날짜를 포함해
+ * 일정 간격으로 고른 10개 날짜만 x축에 표기한다. (그래프 데이터는 그대로 유지)
+ * 영업일이 적으면 undefined를 반환해 기존처럼 모든 날짜를 표기한다.
+ */
+function getXAxisTicks(dates: string[]): string[] | undefined {
+  if (dates.length < DENSE_DAY_THRESHOLD) {
+    return undefined;
+  }
+  const lastIndex = dates.length - 1;
+  return Array.from(
+    { length: DENSE_TICK_COUNT },
+    (_, i) => dates[Math.round((i * lastIndex) / (DENSE_TICK_COUNT - 1))],
+  );
+}
+
 interface AssetTooltipPayloadItem {
   dataKey?: unknown;
   name?: React.ReactNode;
@@ -99,6 +118,7 @@ export function ChartCard({ data }: ChartCardProps) {
   const isGain = current.profitAmountExcludingFees >= 0;
   const dayCount = histories.length;
   const returnSeries = useMemo(() => buildReturnSeries(data), [data]);
+  const xAxisTicks = useMemo(() => getXAxisTicks(histories.map((h) => h.date)), [histories]);
 
   return (
     <section className={`card ${styles.chartCard}`} aria-label="포트폴리오 추이">
@@ -139,6 +159,7 @@ export function ChartCard({ data }: ChartCardProps) {
                 <CartesianGrid stroke="var(--line)" vertical={false} />
                 <XAxis
                   dataKey="date"
+                  ticks={xAxisTicks}
                   tickFormatter={formatTick}
                   interval="preserveStartEnd"
                   tick={{ fill: 'var(--muted)', fontSize: 11 }}
@@ -187,6 +208,7 @@ export function ChartCard({ data }: ChartCardProps) {
                 <CartesianGrid stroke="var(--line)" vertical={false} />
                 <XAxis
                   dataKey="date"
+                  ticks={xAxisTicks}
                   tickFormatter={formatTick}
                   interval="preserveStartEnd"
                   tick={{ fill: 'var(--muted)', fontSize: 11 }}
