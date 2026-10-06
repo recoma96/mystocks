@@ -12,6 +12,10 @@
 
 .tradePane {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  /* 거래 내역이 많아도 카드 높이는 달력 기준으로 유지하고, 목록은 내부 스크롤로 처리 */
+  contain: size;
 }
 
 .subcopy {
@@ -172,7 +176,21 @@
 .tradeList {
   list-style: none;
   margin: 17px 0 0;
-  padding: 0;
+  padding: 0 8px 0 0;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.tradeList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tradeList::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
 }
 
 .tradeItem {
@@ -231,7 +249,8 @@
 }
 
 .bottomNote {
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   color: #9096a8;
   font-size: 11px;
   text-align: right;
@@ -251,6 +270,16 @@
   .calendarPane,
   .tradePane {
     padding: 19px;
+  }
+
+  /* 1열 레이아웃에서는 기준이 될 달력이 옆에 없으므로 고정 최대 높이로 스크롤 처리 */
+  .tradePane {
+    contain: none;
+  }
+
+  .tradeList {
+    flex: none;
+    max-height: 320px;
   }
 
   .dates {
