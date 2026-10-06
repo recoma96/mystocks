@@ -33,6 +33,10 @@ function formatMonthTick(date: string) {
   return format(parseISO(date), 'M월');
 }
 
+function formatTooltipDate(date: string) {
+  return format(parseISO(date), 'yyyy/M/d');
+}
+
 /** 월별 그래프에서 시작점(첫 기록일)을 추가하는 기준일. 이보다 늦게 시작한 달은 시작점 없이 말일부터 표기한다. */
 const MONTHLY_START_MAX_DAY = 20;
 
@@ -208,7 +212,9 @@ export function ChartCard({ data }: ChartCardProps) {
   const xAxisTickFormatter = (date: string) =>
     isMonthly && date !== monthlyStartDate ? formatMonthTick(date) : formatTick(date);
   const formatTooltipLabel = (date: string) =>
-    isMonthly && date !== monthlyStartDate ? `${formatMonthTick(date)} (${formatTick(date)} 기준)` : formatTick(date);
+    isMonthly && date !== monthlyStartDate
+      ? `${formatMonthTick(date)} (${formatTooltipDate(date)} 기준)`
+      : formatTooltipDate(date);
 
   // 직접 고른 날짜(xAxisTicks)는 모두 표기하고, 그 외에는 겹치는 표기를 recharts가 건너뛰게 한다.
   const xAxisInterval = xAxisTicks ? 0 : 'preserveStartEnd';
