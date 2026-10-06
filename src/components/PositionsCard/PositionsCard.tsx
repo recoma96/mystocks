@@ -22,7 +22,7 @@ export function PositionsCard({ data }: PositionsCardProps) {
         </div>
         <div className={styles.portfolioTotal}>
           <span>총 평가금액</span>
-          <strong>{formatUSD(portfolio.positionsMarketValue)}</strong>
+          <strong>{formatUSD(portfolio.positionsMarketValue - portfolio.sgovBalance)}</strong>
         </div>
       </div>
       <div className={styles.positionList}>
