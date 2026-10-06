@@ -48,6 +48,13 @@
   background: var(--navy);
 }
 
+.headRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
 .range {
   flex: 0 0 auto;
   border: 1px solid var(--line);
@@ -56,6 +63,35 @@
   background: #fff;
   color: #656d83;
   font-size: 12px;
+}
+
+.periodToggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2px;
+  background: #fff;
+}
+
+.periodButton {
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  background: transparent;
+  color: #8b91a4;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.periodButton:focus-visible {
+  outline: 2px solid #536ed1;
+  outline-offset: 1px;
+}
+
+.periodActive {
+  background: var(--navy);
+  color: #fff;
 }
 
 .chartInfo {
@@ -204,8 +240,17 @@
     font-size: 12px;
   }
 
+  .headRight {
+    gap: 6px;
+  }
+
   .range {
     padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .periodButton {
+    padding: 4px 7px;
     font-size: 11px;
   }
 
